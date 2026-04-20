@@ -1,0 +1,7 @@
+mvn -DskipTests compile
+
+mvn -DskipTests exec:java "-Dexec.mainClass=staAssignment.Seleniumassignment"
+
+mvn -q -f seleniumweb-exp9b-pom/pom.xml test
+
+mvn -f seleniumweb-exp8-testng/pom.xml test
