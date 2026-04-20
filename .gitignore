@@ -1,0 +1,27 @@
+# IDE and workspace metadata
+.metadata/
+.vscode/
+.idea/
+
+# Maven/Java build outputs
+**/target/
+**/bin/
+**/*.class
+
+# Eclipse project metadata
+**/.project
+**/.classpath
+**/.settings/
+
+# Test and runtime outputs
+**/surefire-reports/
+**/test-output/
+**/*.log
+
+# Local/temporary files
+Thumbs.db
+.DS_Store
+seleniumweb/i.txt
+
+# App modernization generated artifacts
+.github/java-upgrade/
