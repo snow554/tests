@@ -21,24 +21,18 @@ public class Seleniumassignment {
 
             driver.manage().window().maximize();
 
-            // 1. Open website
             driver.get("https://demowebshop.tricentis.com/");
 
-            // 2. Click Login
             wait.until(ExpectedConditions.elementToBeClickable(By.linkText("Log in"))).click();
 
-            // 3. Enter login details
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("Email"))).sendKeys("1testing@gmail.com");
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("Password"))).sendKeys("123456");
 
-            // 4. Click login button
             wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input.button-1.login-button"))).click();
 
-            // 5. Search product
             wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("small-searchterms"))).sendKeys("book");
             wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("input.button-1.search-box-button"))).click();
 
-            // 6. Add first search result to cart (with fallback to product details page)
             WebElement firstProduct = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".product-item")));
             ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView({block:'center'});", firstProduct);
 
@@ -55,7 +49,6 @@ public class Seleniumassignment {
                 wait.until(ExpectedConditions.elementToBeClickable(detailAddButton)).click();
             }
 
-            // 7. Verify cart count updated from (0)
             wait.until(ExpectedConditions.not(ExpectedConditions.textToBe(By.cssSelector(".cart-qty"), "(0)")));
 
             Thread.sleep(2000);
